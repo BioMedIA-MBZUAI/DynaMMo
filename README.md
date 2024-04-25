@@ -1,12 +1,21 @@
-# CL-Pytorch: Continual Learning Framework for Pytorch
+# DynaMMo: Dynamic Model Merging for Efficient Class Incremental Learning for Medical Images
+
+[Mohammad Areeb Qazi](https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en),
+[Ibrahim Almakky](https://scholar.google.com/citations?user=T9MTcK0AAAAJ&hl=en&oi=sra),
+[Anees Ur Rehman Hashmi](https://github.com/aneesurhashmi),
+[Santosh Sanjeev](https://github.com/santosh9sanjeev?tab=repositories),
+[Mohammad Yaqub](https://scholar.google.com/citations?user=9dfn5GkAAAAJ)
+
+> **Abstract:** *Continual learning, the ability to acquire knowledge from new data while retaining previously learned information, is a fundamental challenge in machine learning. Various approaches, including memory replay, knowledge distillation, model regularization, and dynamic network expansion, have been proposed to address this issue. Thus far, dynamic network expansion methods have achieved state-of-the-art performance at the cost of incurring significant computational overhead. This is due to the need for additional model buffers, which makes it less feasible in resource-constrained settings, particularly in the medical domain. To overcome this challenge, we propose Dynamic Model Merging, DynaMMo, a method that merges multiple networks at different stages of model training to achieve better computational efficiency. Specifically, we employ lightweight learnable modules for each task and combine them into a unified model to minimize computational overhead. DynaMMo achieves this without compromising performance, offering a cost-effective solution for continual learning in medical applications. We evaluate DynaMMo on three publicly available datasets, demonstrating its effectiveness compared to existing approaches. DynaMMo offers around 10-fold reduction in GFLOPS with a small drop of 2.76 in average accuracy when compared to state-of-the-art dynamic-based approaches.*
 
 <div align=center>
-  <img src="imgs/Learning_and_forgetting.png">
+  <img src="main.jpg" width="70%">
 </div>
 
+### CL-Pytorch: Continual Learning Framework for Pytorch
 This codebase implements some SOTA continual / incremental / lifelong learning methods by PyTorch.
 
-By the way, this is also the official repository of [Adapter Learning in Pretrained Feature Extractor for Continual Learning of Diseases. MICCAI2023](https://arxiv.org/abs/2304.09042)
+By the way, this is also the official repository of [DynaMMo: Dynamic Model Merging for Efficient Class Incremental Learning for Medical Images](https://arxiv.org/abs/2404.14099)
 
 One step baseline method:
 
@@ -27,21 +36,8 @@ Continual methods already supported:
 - [x] DualPrompt: Complementary Prompting for Rehearsal-free Continual Learning. ECCV2022 [[paper](https://arxiv.org/abs/2204.04799)]
 - [x] CODA-Prompt: COntinual Decomposed Attention-based Prompting for Rehearsal-Free Continual Learning. CVPR2023 [[paper](https://arxiv.org/abs/2211.13218)]
 - [x] ACL: Adapter Learning in Pretrained Feature Extractor for Continual Learning of Diseases. MICCAI2023 [[paper](https://arxiv.org/abs/2304.09042)]
+- [x] DynaMMo: Dynamic Model Merging for Efficient Class Incremental Learning for Medical Images [[paper](https://arxiv.org/abs/2404.14099)]
 
-Contrastive model pretraining methods already supported:
-
-- [x] MoCov2: Improved Baselines with Momentum Contrastive Learning. [[paper](https://arxiv.org/abs/2003.04297)]
-- [x] SimSiam: Exploring Simple Siamese Representation Learning. [[paper](https://arxiv.org/abs/2011.10566)]
-
-Coming soon:
-- [ ] LwF:  Learning without Forgetting. ECCV2016 [[paper](https://arxiv.org/abs/1606.09282)]
-- [ ] EWC: Overcoming catastrophic forgetting in neural networks. PNAS2017 [[paper](https://arxiv.org/abs/1612.00796)]
-- [ ] LwM: Learning without Memorizing. [[paper](https://arxiv.org/abs/1811.08051)]
-- [ ] Layerwise Optimization by Gradient Decomposition for Continual Learning. CVPR2021[[paper](https://arxiv.org/abs/2105.07561v1)]
-- [ ] FOSTER: Feature Boosting and Compression for Class-incremental Learning. ECCV 2022 [[paper](https://arxiv.org/abs/2204.04662)]
-- [ ] Class-Incremental Continual Learning into the eXtended DER-verse. TPAMI 2022 [[paper](https://arxiv.org/abs/2201.00766)]
-- [ ] Continual Learning with Bayesian Model based on a Fixed Pre-trained Feature Extractor. MICCAI2021[[paper](https://arxiv.org/abs/2204.13349)]
-- [ ] Continual Learning of New Diseases with Dual Distillation and Ensemble Strategy. MICCAI2020[[paper](https://www.researchgate.net/publication/346015733_Continual_Learning_of_New_Diseases_with_Dual_Distillation_and_Ensemble_Strategy)]
 
 ## How to Use
 
@@ -87,24 +83,20 @@ More information about the supported datasets can be found in `datasets/`
 
 We use `os.environ['DATA']` to access image data. You can config your environment variables in your computer by editing `~/.bashrc` or just change the code.
 
-### Reproduce Results
-More details can be found in [Reproduce_results.md](./Reproduce_results.md).
+
+## Citation
+
+If you use **xreal** or our repository in your research, please cite our paper *Cascaded Latent Diffusion Models for High-Resolution Chest X-ray Synthesis*:
+
+```
+@article{qazi2024dynammo,
+  title={DynaMMo: Dynamic Model Merging for Efficient Class Incremental Learning for Medical Images},
+  author={Qazi, Mohammad Areeb and Almakky, Ibrahim and Hashmi, Anees Ur Rehman and Sanjeev, Santosh and Yaqub, Mohammad},
+  journal={arXiv preprint arXiv:2404.14099},
+  year={2024}
+}
+```
 
 ## References
 
-We sincerely thank the following works for providing help.
-
-https://github.com/zhchuu/continual-learning-reproduce
-
-https://github.com/G-U-N/PyCIL
-
-https://github.com/GT-RIPL/CODA-Prompt
-
-https://github.com/aimagelab/mammoth
-
-## ToDo
-
-- Results need to be checked: ewc
-- Methods need to be modified: mas, lwf
-- Multi GPU processing module need to be add.
-- A detailed documentation is coming soon
+This repository is based on the codebase provided by the authors of "ACL: Adapter Learning in Pretrained Feature Extractor for Continual Learning of Diseases. MICCAI2023" [[Link to the repo]( https://github.com/GiantJun/CL_Pytorch)]
