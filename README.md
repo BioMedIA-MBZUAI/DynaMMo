@@ -86,7 +86,7 @@ We use `os.environ['DATA']` to access image data. You can config your environmen
 
 ## Citation
 
-If you use **xreal** or our repository in your research, please cite our paper *Cascaded Latent Diffusion Models for High-Resolution Chest X-ray Synthesis*:
+If you use **DynaMMo** or our repository in your research, please cite our paper *DynaMMo: Dynamic Model Merging for Efficient Class Incremental Learning for Medical Images*:
 
 ```
 @article{qazi2024dynammo,
