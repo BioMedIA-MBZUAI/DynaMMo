@@ -64,7 +64,7 @@ Supported Datasets:
 
 More information about the supported datasets can be found in `datasets/`
 
-Set `os.environ['DATA']`, where the dataset will be downloaded. You can config your environment variables in your computer by editing `~/.bashrc` or just change the code.
+Set `os.environ['DATA']`, where the dataset will be downloaded which is in the main.py file. You can also config your environment variables in your computer by editing `~/.bashrc` or just change the code.
 
 ### Run experiments
 
