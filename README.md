@@ -48,6 +48,21 @@ conda create -n CL_Pytorch python=3.8
 conda activate CL_Pytorch
 pip install -r requirement.txt
 ```
+### Add datasets and your method
+
+Add corresponding dataset .py file to `datasets/`. It is done! The programme can automatically import the newly added datasets.
+
+we put continual learning methods inplementations in `/methods/multi_steps` folder, pretrain methods in `/methods/pretrain` folder and normal one step training methods in `/methods/singel_steps`.
+
+Supported Datasets:
+
+- Natural image datasets: CIFAR-10, CIFAR-100, ImageNet100, ImageNet1K, ImageNet-R, TinyImageNet, CUB-200
+
+- Medical image datasets: MedMNIST, path16, Skin7, Skin8, Skin40
+
+More information about the supported datasets can be found in `datasets/`
+
+We use `os.environ['DATA']` to access image data. You can config your environment variables in your computer by editing `~/.bashrc` or just change the code.
 
 ### Run experiments
 
@@ -66,23 +81,6 @@ python main.py --checkpoint_dir logs/XXX/XXX.pkl
 ```
 
 If you want to temporary change GPU device in the experiment, you can type `--device #GPU_ID` in terminal without changing 'device' in `.yaml` config file.
-
-### Add datasets and your method
-
-Add corresponding dataset .py file to `datasets/`. It is done! The programme can automatically import the newly added datasets.
-
-we put continual learning methods inplementations in `/methods/multi_steps` folder, pretrain methods in `/methods/pretrain` folder and normal one step training methods in `/methods/singel_steps`.
-
-Supported Datasets:
-
-- Natural image datasets: CIFAR-10, CIFAR-100, ImageNet100, ImageNet1K, ImageNet-R, TinyImageNet, CUB-200
-
-- Medical image datasets: MedMNIST, path16, Skin7, Skin8, Skin40
-
-More information about the supported datasets can be found in `datasets/`
-
-We use `os.environ['DATA']` to access image data. You can config your environment variables in your computer by editing `~/.bashrc` or just change the code.
-
 
 ## Citation
 

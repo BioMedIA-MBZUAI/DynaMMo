@@ -9,6 +9,7 @@ import numpy as np
 import random
 
 os.environ['WANDB_MODE']='offline'
+os.environ['DATA'] = 'path/to/the/dataset'
 
 def set_random(seed):
     torch.manual_seed(seed)
